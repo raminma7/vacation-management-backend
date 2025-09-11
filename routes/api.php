@@ -12,6 +12,8 @@ Route::post('/logout', [AuthController::class, "logout"])->middleware('auth:sanc
 
 Route::post('/get-user', [UserController::class, "getUserInfo"])->middleware('auth:sanctum');
 
+Route::get('/get-vacation-overview', [VacationRequestController::class, "getVacationBalance"])->middleware('auth:sanctum');
 Route::post('/create-request', [VacationRequestController::class, "createRequest"])->middleware('auth:sanctum');
 Route::get('/get-requests', [VacationRequestController::class, "getUserRequests"])->middleware('auth:sanctum');
+Route::get('/company-holidays', [VacationRequestController::class, "getCompanyHolidays"])->middleware('auth:sanctum');
 Route::post('/cancel-request/{id}', [VacationRequestController::class, 'cancelRequest'])->middleware('auth:sanctum');

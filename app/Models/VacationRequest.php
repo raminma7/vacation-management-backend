@@ -19,6 +19,7 @@ class VacationRequest extends Model
         'end_time',
         'note',
         'status',
+        'extra_hours_used',
         'admin_note',
     ];
 
