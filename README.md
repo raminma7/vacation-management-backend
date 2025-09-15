@@ -18,7 +18,9 @@ Steps to start the project:
 
 5 - ./vendor/bin/sail npm install
 
-6 - ./vendor/bin/sail npm run dev
+6 - ./vendor/bin/sail npm run build
+
+7 - ./vendor/bin/sail npm run dev (Due to caching issues, styles may not appear correctly on subsequent runs. If that happens, run the command again.)
 
 
 - You can also seed the database for sample users using **./vendor/bin/sail artisan db:seed --class=UserSeeder** command.
