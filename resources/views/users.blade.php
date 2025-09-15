@@ -28,6 +28,7 @@
                             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Email</th>
                             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Extra</th>
                             <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Action</th>
+                            <th class="px-4 py-2 text-left text-sm font-medium text-gray-700">Near Limit</th>
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
@@ -45,6 +46,13 @@
                                         <button type="submit" class="px-3 py-1 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition">Update</button>
                                     </td>
                                 </form>
+                                <td class="px-4 py-2 text-sm text-gray-700">
+                                    @if($user->is_over_limit)
+                                        <div class="inline-block w-3 h-3 bg-red-500 rounded-full"></div>
+                                    @else
+                                        <div class="inline-block w-3 h-3 bg-green-500 rounded-full"></div>
+                                    @endif
+                                </td>
                             </tr>
                         @endforeach
                     </tbody>
