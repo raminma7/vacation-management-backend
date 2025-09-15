@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\VacationRequest;
+use App\Notifications\VacationRequestStatusUpdated;
 
 class AdminVacationRequestController extends Controller
 {
@@ -31,6 +32,8 @@ class AdminVacationRequestController extends Controller
             $user->save();
         }
 
+        $requestModel->user->notify(new VacationRequestStatusUpdated($requestModel));
+        
         return redirect()->back()->with('success', 'Request updated successfully.');
     }
 
